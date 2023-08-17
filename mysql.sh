@@ -15,5 +15,16 @@ then
  exit 1
 else
  echo "mysql success"
-fi  
+fi
+
+yum install postfix -y
+
+if [ $? -ne 0 ]
+then
+ echo "postfix not success"
+ exit 1
+else
+ echo "mpostfix success"
+fi
+
   
