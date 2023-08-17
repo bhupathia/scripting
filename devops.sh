@@ -1,1 +1,1 @@
-echo "aws devops"
+echo "aws devops with script"
