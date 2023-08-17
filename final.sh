@@ -7,7 +7,7 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-VALIDATE(){
+ VALIDATE(){
  if [ $1 -ne 0 ]
 then
      echo  -e "$2..  $R print error  $N"
@@ -26,4 +26,4 @@ fi
 yum install mysql -y &>>$LOGFILE 
 VALIDATE $? "installing mysql"
 yum install postfix -y &>>$LOGFILE
-VALIDATE $> "installing postfix"
+VALIDATE $? "installing postfix"
