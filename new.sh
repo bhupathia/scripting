@@ -10,7 +10,7 @@ N="\e[om"
 Y="\e[33m"
 
 USERID=$(id -u)
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then
  echo :"print error run on root access"
  exit 1
@@ -19,7 +19,7 @@ fi
 
 
 VALIDATE(){
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
     then
      echo -e "Installing $2 ... $R failure $N "
      exit 1
@@ -31,7 +31,7 @@ VALIDATE(){
 for i in $@
 do
  yum list installed $i &>>$LOGFILE
- if [ $? -ne 0]
+ if [ $? -ne 0 ] 
  then
   echo  :"$i is not installed lets installed"
   yum install $i -y &>>$LOGFILE
