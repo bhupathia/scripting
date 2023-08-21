@@ -21,7 +21,7 @@ partition=$(echo $line | awk '{print $1}')
 # now you need check more than thre shold or not
 if [ $usage -gt $DISK_USAGE_THREESHOLD ]
 then
- message+=" HIGH DISK USAGE ON :$usage: $partition"
+ message+=" HIGH DISK USAGE ON :$usage: $partition \n"
 fi 
 done <<< $DISK_USAGE
- echo "message : $message"
+ echo -e "message : $message"
