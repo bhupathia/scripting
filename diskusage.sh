@@ -8,7 +8,7 @@ G="\e[32m"
 N="\e[om"
 Y="\e[33m"
 
-DISK_USAGE=(df -hT | grep -vE 'tmpfs| filesyatem')
+DISK_USAGE=(df -hT | grep -vE 'tmpfs| filesystem')
 DISK_USAGE_THREESHOLD=1
 
 while IFS= read line
