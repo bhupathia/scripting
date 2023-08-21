@@ -10,8 +10,18 @@ Y="\e[33m"
 
 DISK_USAGE=$(df -hT | grep -vE 'tmpfs|filesystem')
 DISK_USAGE_THREESHOLD=1
+message=""
 
 while IFS= read line
 do
-  echo "output : $line"
+# this command used for percemtage used for numbers
+usage=$(echo $line | awk '{print$6}'|cut -d % -f1)
+# this command gives partiotons
+partition=$(echo $line | awk '{print $1}')
+# now you need check more than thre shold or not
+if ( $usage -gt $DISK_USAGE_THREESHOLD)
+then
+ message+=" HIGH DISK USAGE ON :$usage: $partition"
+fi 
 done <<< $DISK_USAGE
+ echo "message : $message"
