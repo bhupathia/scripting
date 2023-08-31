@@ -1,6 +1,0 @@
-- name: variables at command line
-host: localhost
- tasks:
- - name: printing variables at command line
- anisible.builtin.debug:
- msg: "variables: {{COURSE}}"

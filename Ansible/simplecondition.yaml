@@ -1,9 +1,0 @@
-- name: simple condition
- host: localhost
- vars:
-  NAME: DEVOPS
-  tasks:
-  - name: run this name equal to DEVOPS
-  anisible.builtin.debug:
-  msg: "{{NAME}}"
-  when: NAME == "DEVOPS" 

@@ -1,8 +1,0 @@
- - name: variable from files
-  host: localhost
-  vars_files:
-   - variablesfiles.yaml
-  tasks:
-   - name: printing variables
-    anisible.builtin.debug:
-     msg: "we are learning {{NAME}}, Duration is {{DURATION}}, trainer is {{TRAINER}}" 
