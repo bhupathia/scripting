@@ -1,0 +1,15 @@
+- name: variables at task level
+ host: localhost
+  vars:
+   - money: 10000rs
+    land: 10 acres
+    tasks:
+     -name: printing values at play level
+     anisible.builtin.debug:
+     msg: " money: {{money}}, land: {{land}}"
+     - name: inherit  values at paly level add more values
+     vars:
+      -money: 20000 rs
+       houses: 3 houses
+       anisible.builtin.debug:
+       msg: "money: {{money}}, land: {{land}},houses: {{houses}}"

@@ -1,0 +1,13 @@
+- name: install packages
+ host: mongodb
+  tasks:
+   - name: install packges
+   anisible.builtin.yum:
+    name: " {{item}}"
+    state: installed
+    # list of string
+  loop:
+   - nginx
+   - postfix
+   - cyrus-sasl-plain
+   - mailx

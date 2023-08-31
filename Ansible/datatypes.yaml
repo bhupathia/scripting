@@ -1,0 +1,34 @@
+- name: variables at data types 
+ host: localhost
+ vars:
+ AGE: 25
+ NAME: BHUPATHI
+ isDevOps: true
+ - skills:
+  - DevOps
+  - AWS
+  - Docker
+  Experience:
+  DevOps=2
+  AWS=3
+  Docker=4
+
+  tasks:
+   - name: printing number variables
+   anisible.builtin.debug:
+   msg: "{{AGE}}"
+   - name: printing string variables
+      anisible.builtin.debug:
+      msg: "{{NAME}}"
+   - name: printing boolean variables
+       anisible.builtin.debug:
+       msg: "{{isDevOps}}"
+      - name: printing list variables
+          anisible.builtin.debug:
+          msg: "{{skills}}"
+         - name: printing map variables
+            anisible.builtin.debug:
+            msg: "{{Experience}}"
+ 
+ 
+

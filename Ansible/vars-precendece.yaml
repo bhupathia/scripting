@@ -1,0 +1,16 @@
+- name: variables at precedence level
+ host: mongodb
+ vars:
+  NAME: BHUPATHI-PLAY
+ vars_files:
+  - variablesfile.yaml
+  vars_promt:
+  - name: NAME
+   promt: enter your name
+   private: fasle
+   tasks:
+    - name: variables at task level
+     vars:
+     NAME: BHUPATHI 
+     anisible.builtin.debug:
+     msg: "trainer is {{NAME}}"
